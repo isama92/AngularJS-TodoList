@@ -1,5 +1,3 @@
-module.exports = function (app, express, path) {
-    app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname, '..', '..', 'client', 'index.html'))
-    });
+module.exports = function (app, express) {
+    app.use('/api/todolist', require('./../resources/todolist/'));
 }

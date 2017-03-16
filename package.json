@@ -5,8 +5,8 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start-server": "nodemon ./server/server.js",
-    "start-client": "cd client && live-server"
+    "start": "nodemon ./server/server.js",
+    "start_client": "cd client && live-server"
   },
   "author": "isama92",
   "license": "ISC",
