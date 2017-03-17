@@ -1,11 +1,11 @@
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.when('/', '/test');
+    $urlRouterProvider.when('', '/');
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        .state('/test', {
-            url: '/test',
+        .state('/', {
+            url: '/',
             templateUrl: '/js/todolist/todolist.template.html',
             controller: 'todolistCtrl'
         });
