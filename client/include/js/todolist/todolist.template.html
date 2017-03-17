@@ -1,1 +1,29 @@
-<h1>{{titolo}}</h1>
+<!-- NEW TO DO FORM-->
+
+<form class="form-inline" ng-submit="addTodo()">
+    <div class="form-group">
+        <label for="todo_title">To Do Title:</label>
+        <input type="text" ng-model="new_todo.title" name="title" class="form-control" name="todo_title" placeholder="To Do Title">
+    </div>
+    <div class="form-group">
+        <label for="todo_description">To Do Description:</label>
+        <input type="text" ng-model="new_todo.description" name="title" class="form-control" name="todo_description" placeholder="To Do Description">
+    </div>
+    <button type="submit" class="btn btn-default">Add ToDo</button>
+</form>
+
+
+<!-- TO DO LIST -->
+
+<div class="todo-list-container" ng-show="todos.length">
+    <h3>To Do List:</h3>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="todo in todos">
+            <span><input type="checkbox" ng-model="todo.done" ng-change="updateDoneTodo(todo._id)"></span>
+            <span class="todo-title todo-{{todo.done}}" ng-bind="todo.title"></span>
+            <span>: </span>
+            <span class="todo-description todo-{{todo.done}}" ng-bind="todo.description"></span>
+            <span class="todo-delete" ng-click="deleteTodo(todo._id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        </li>
+    </ul>
+</div>

@@ -1,3 +1,22 @@
 .container {
     margin-top: 50px;
 }
+
+.todo-list-container {
+    margin-top: 50px;
+}
+
+.todo-title {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.todo-description {}
+
+.todo-true {
+    text-decoration: line-through;
+}
+
+.todo-delete {
+    margin-left: 50px;
+}

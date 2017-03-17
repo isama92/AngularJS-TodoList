@@ -16,7 +16,7 @@ module.exports = (function () {
     var deleteTodo = function (req, res) {
         Todos.findByIdAndRemove(req.params.id).exec()
             .then(function (data) {
-                res.status(200).json(data);
+                getTodosAsResponse(req, res);
             })
             .catch(function (err) {
                 res.status(500).json(err);
@@ -26,7 +26,7 @@ module.exports = (function () {
     var updateTodo = function (req, res) {
         Todos.findByIdAndUpdate(req.params.id, req.body).exec()
             .then(function (data) {
-                res.status(200).json(data);
+                getTodosAsResponse(req, res);
             })
             .catch(function (err) {
                 res.status(500).json(err);
@@ -37,7 +37,7 @@ module.exports = (function () {
         var new_todo = new Todos(req.body);
         new_todo.save()
             .then(function (data) {
-                res.status(200).json(data);
+                getTodosAsResponse(req, res);
             })
             .catch(function (err) {
                 res.status(500).json(err);
@@ -46,6 +46,16 @@ module.exports = (function () {
 
     var detailsTodo = function (req, res) {
 
+    }
+
+    var getTodosAsResponse = function (req, res) {
+        Todos.find().exec()
+            .then(function (data) {
+                res.status(200).json(data);
+            })
+            .catch(function (err) {
+                res.status(500).json(err);
+            });
     }
 
     return {
