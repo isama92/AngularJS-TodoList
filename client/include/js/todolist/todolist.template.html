@@ -23,6 +23,8 @@
             <span class="todo-title todo-{{todo.done}}" ng-bind="todo.title"></span>
             <span>: </span>
             <span class="todo-description todo-{{todo.done}}" ng-bind="todo.description"></span>
+            <!--<span class="todo-description todo-{{todo.done}}" ng-bind="todo.data"></span>-->
+            <span><input type="datetime-local" ng-model="todo.data"></span>
             <span class="todo-delete" ng-click="deleteTodo(todo._id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
         </li>
     </ul>

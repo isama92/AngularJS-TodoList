@@ -1,7 +1,7 @@
 angular.module('app').service('todolistSvc', function ($http) {
 
     const PORT = 3000;
-    var root = 'http://localhost:' + PORT;
+    var root = 'http://192.168.1.192:' + PORT;
 
     var getTodos = function () {
         return $http({

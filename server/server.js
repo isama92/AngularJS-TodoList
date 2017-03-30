@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var livereload = require('livereload');
 const PORT = 3000;
+var server = livereload.createServer();
+server.watch(__dirname + './../client');
 app.use(bodyParser.json());
 
 require('./config/');

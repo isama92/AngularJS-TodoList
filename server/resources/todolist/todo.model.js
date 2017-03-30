@@ -12,19 +12,11 @@ var todoSchema = new Schema({
     done: {
         type: Boolean,
         default: false
+    },
+    data: {
+        type: Date,
+        default: Date.now
     }
-    /*,    CAMPO DATA PER IL COMMENTO DEL PRE SAVE, VALUE DI DEFAULT DI DATA
-        data: {
-            type: Date,
-        }*/
 });
 
-/*
-    default value:
-    todoSchema.pre('save', function(next){
-        if(!this.data)
-            this.data = new Date();
-        next();
-    })
-*/
 module.exports = mongoose.model('todolist', todoSchema);
